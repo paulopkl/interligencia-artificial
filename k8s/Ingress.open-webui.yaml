@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: open-webui
+  name: open-webui-ingress
+  labels:
+    name: open-webui-ingress
+  #annotations:
+    # Use appropriate annotations for your Ingress controller, e.g., for NGINX:
+    # nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: open-webui.paulo.io
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: open-webui-service
+                port: 
+                  number: 8080

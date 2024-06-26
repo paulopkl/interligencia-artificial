@@ -1,0 +1,5 @@
+$ minikube start --driver docker --container-runtime docker --gpus all
+$ kubectl get nodes
+$ kubectl describe nodes | grep -i gpu
+
+
